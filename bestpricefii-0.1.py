@@ -1,6 +1,4 @@
 # importar as bibliotecas necessárias
-import pandas as pd
-from pandas_datareader import data as web
 import yahoo_fin
 from yahoo_fin import stock_info as si
 import requests
@@ -43,34 +41,4 @@ for titulo in titulos:
     titulo = threading.Thread(target=chama,args=(titulo,))
     titulo.start()
     
-    
-# for titulo in  titulos:
-#     titulo.join()
 
-#print(vet)
-
-# for titulo in titulos:
-#     response = requests.get('https://www.fundsexplorer.com.br/funds/'+titulo)
-#     content = response.content
-#     site = BeautifulSoup(content, 'html.parser')
-#     classes = site.findAll('span', attrs={'class': 'indicator-value'})
-#     dividendo = float(str(classes[1]).split('R$ ')[1].split('</span>')[0].replace(',','.'))
-#     #print(dividendo)
-#     preco = float(round(si.get_live_price(titulo+".SA"),2))
-# #print(si.get_live_price("MXRF11.SA"))
-#     div_tit=dividendo/preco
-#     print(titulo)
-#     print(div_tit)
-#     vet.append(titulo)
-#     vet.append(div_tit)
-# print(vet)
-    #vet = titulo+div_tit
-    
-    #print("VRTA11 - preço", si.get_live_price(titulo+".SA"))
-#subtitulo = site.find('div', attrs={'class': 'feed-post-body-resumo'})
-
-#yf.pbr_override()
-#ibov = web.get_data_yahoo('^BVSP')
-#ibov = web.get_data_yahoo('MXRF11.SA')
-#ibov = web.get_live_price('MXRF11.SA')
-#print(ibov.head())
